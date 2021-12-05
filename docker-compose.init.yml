@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+
+  cronicle:
+    image: soulteary/cronicle:0.8.62
+    hostname: cronicle
+    command: /opt/cronicle/bin/control.sh setup
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./data/data:/opt/cronicle/data
+      - ./data/logs:/opt/cronicle/logs
+      - ./data/plugins:/opt/cronicle/plugins
+    environment:
+      - TZ=Asia/Shanghai

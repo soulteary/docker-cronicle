@@ -1,0 +1,12 @@
+--- lib/engine.js	2021-06-17 19:03:36.000000000 +0000
++++ /tmp/engine.js	2021-12-04 09:50:13.000000000 +0000
+@@ -152,7 +152,8 @@
+ 		this.server.on('day', function() {
+ 			self.archiveLogs();
+ 		} );
+-		
++		// for docker env
++		self.goMaster();
+ 		// determine master server eligibility
+ 		this.checkMasterEligibility( function() {
+ 			// master mode (CLI option) -- force us to become master right away

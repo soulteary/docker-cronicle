@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+
+  cronicle:
+    image: soulteary/cronicle:0.8.62
+    restart: always
+    hostname: cronicle
+    ports:
+      - 3012:3012
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./data/data:/opt/cronicle/data
+      - ./data/logs:/opt/cronicle/logs
+      - ./data/plugins:/opt/cronicle/plugins
+    extra_hosts:
+      - "cronicle.lab.io:0.0.0.0"
+    environment:
+      - TZ=Asia/Shanghai
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:3012/api/app/ping || exit 1"]
+      interval: 5s
+      timeout: 1s
+      retries: 3
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
