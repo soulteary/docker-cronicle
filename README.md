@@ -2,6 +2,8 @@
 
 Simple and lightweight Cronicle Docker solution.
 
+![Main Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-details-complete.png)
+
 Say goodbye to troublesome configuration and installation, and start your Scheduled Task Center with One-Click.
 
 ## Docker Images
@@ -75,3 +77,49 @@ docker-compose down && docker-compose up -d
 ```
 
 Access it in your browser: http://localhost:3012
+
+## Snapshots
+
+Home
+
+![Home Tab Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/home.png)
+
+Schedule
+
+![Schedule Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/schedule.png)
+
+Event
+
+![Edit Event Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/edit-event.png)
+
+![Event Timing Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/edit-event-timing.png)
+
+![Resource Limits Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/edit-event-res-limits-new.png)
+
+![Event History Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/event-history.png)
+
+![Event Stats Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/event-stats.png)
+
+![Graphs Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/event-stats-graphs.png)
+
+![Completed Jobs Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/completed-jobs.png)
+
+![Job In Progress Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-live-progress.png)
+
+![Job Success Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-details-complete.png)
+
+![Job Failed Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-details-error.png)
+
+![My Account Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/my-account.png)
+
+![Activity Log Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-activity-log.png)
+
+![API Keys Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-api-keys.png)
+
+![Editing API Key Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-api-keys-edit-2.png)
+
+![Categories Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-categories.png)
+
+![Edit Category Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-category-edit.png)
+
+![Plugins Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/admin-plugins.png)
