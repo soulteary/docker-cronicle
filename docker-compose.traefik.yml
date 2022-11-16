@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+
+  cronicle:
+    image: soulteary/cronicle:0.9.16
+    restart: always
+    expose:
+      - 3012
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      # - "traefik.http.routers.cronicle-web.middlewares=redir-https@file"
+      - "traefik.http.routers.cronicle-web.entrypoints=http"
+      - "traefik.http.routers.cronicle-web.rule=Host(`cronicle.lab.io`)"
+
+      - "traefik.http.routers.cronicle-ssl.tls=true"
+      # - "traefik.http.routers.cronicle-ssl.middlewares=gzip@file"
+      - "traefik.http.routers.cronicle-ssl.entrypoints=https"
+      - "traefik.http.routers.cronicle-ssl.rule=Host(`cronicle.lab.io`)"
+
+      - "traefik.http.services.cronicle-backend.loadbalancer.server.scheme=http"
+      - "traefik.http.services.cronicle-backend.loadbalancer.server.port=3012"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./data/data:/opt/cronicle/data
+      - ./data/logs:/opt/cronicle/logs
+      - ./data/plugins:/opt/cronicle/plugins
+    extra_hosts:
+      - "cronicle.lab.io:0.0.0.0"
+    environment:
+      - TZ=Asia/Shanghai
+      - HOSTNAME=cronicle.lab.io
+      - CRONICLE_foreground=1
+      - CRONICLE_echo=1
+      - CRONICLE_base_app_url=http://cronicle.lab.io:3012
+      - CRONICLE_web_socket_use_hostnames=1
+      - CRONICLE_server_comm_use_hostnames=1
+      - CRONICLE_WebServer__http_port=3012
+      - CRONICLE_WebServer__http_bind_address=0.0.0.0
+      - CRONICLE_WebServer__https=0
+      - CRONICLE_web_direct_connect=0
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:3012/api/app/ping || exit 1"]
+      interval: 5s
+      timeout: 1s
+      retries: 3
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
