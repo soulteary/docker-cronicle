@@ -1,4 +1,4 @@
-# Docker Cronicle
+# Docker Cronicle / 轻量计划任务
 
 [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
 
@@ -6,22 +6,22 @@
   <a href="README.md" target="_blank">ENGLISH</a> | <a href="README_CN.md">中文文档</a>
 </p>
 
-Simple and lightweight Cronicle Docker solution.
+简洁、轻量的容器计划任务方案。
 
 ![Main Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-details-complete.png)
 
-Say goodbye to troublesome configuration and installation, and start your Scheduled Task Center with One-Click.
+告别麻烦的配置和安装过程，使用容器**一键启动**你的计划任务中心。
 
-## Docker Images
+## 容器镜像
 
 ```bash
-# use the latest version
+# 使用最新版本
 docker pull soulteary/cronicle
-# or specified version
+# 或者使用指定版本
 docker pull soulteary/cronicle:0.9.16
 ```
 
-### Supported Versions
+### 当前支持版本
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
@@ -30,16 +30,16 @@ DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/
 - [v0.9.9](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.11)
 - [v0.8.62](https://github.com/jhuckaby/Cronicle/releases/tag/v0.8.62)
 
-### Default Account
+### 应用默认账号
 
-default account and password:
+应用默认的账号和密码：
 
-- username: `admin`
-- password: `admin`
+- 用户账号: `admin`
+- 用户密码: `admin`
 
-## Docker
+## Docker 使用
 
-Init your app first (first time only).
+初始化应用（仅需执行一次）：
 
 ```bash
 docker run --rm -it \
@@ -52,7 +52,7 @@ docker run --rm -it \
         /opt/cronicle/bin/control.sh setup
 ```
 
-Then, Start app using the Docker CLI to locally persist data and logs.
+接着，使用 Docker 启动一个将数据和日志文件持久化保存在本地的容器：
 
 ```bash
 docker run \
@@ -67,35 +67,35 @@ docker run \
         soulteary/cronicle
 ```
 
-Access it in your browser: http://localhost:3012
+在浏览器中访问这个服务：http://localhost:3012
 
-## Docker Compose
+## Docker Compose 使用
 
-Init your app first (first time only).
+初始化应用（仅需执行一次）：
 
 ```bash
 docker-compose -f docker-compose.init up
 ```
 
-Then, Start app with simple command:
+接着，启动我们的服务：
 
 ```bash
 docker-compose down && docker-compose up -d
 ```
 
-Access it in your browser: http://localhost:3012
+在浏览器中访问这个服务：http://localhost:3012
 
-## Snapshots
+## 界面预览
 
-Home
+首页
 
 ![Home Tab Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/home.png)
 
-Schedule
+计划任务
 
 ![Schedule Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/schedule.png)
 
-Event
+事件
 
 ![Edit Event Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/edit-event.png)
 
