@@ -12,7 +12,7 @@ Simple and lightweight Cronicle Docker solution.
 
 Say goodbye to troublesome configuration and installation, and start your Scheduled Task Center with One-Click.
 
-## Docker Images
+## Get Latest Docker Images
 
 ```bash
 # use the latest version
@@ -39,20 +39,9 @@ default account and password:
 
 ## Docker
 
-Init your app first (first time only).
+It is very simple to use, only **one command is needed**:
 
-```bash
-docker run --rm -it \
-        -v `pwd`/data/data:/opt/cronicle/data:rw \
-        -v `pwd`/data/logs:/opt/cronicle/logs:rw \
-        -v `pwd`/data/plugins:/opt/cronicle/plugins:rw \
-        --hostname cronicle \
-        --name cronicle \
-        soulteary/cronicle \
-        /opt/cronicle/bin/control.sh setup
-```
-
-Then, Start app using the Docker CLI to locally persist data and logs.
+you can start a container that persists `data` and `log` files locally through Docker.
 
 ```bash
 docker run \
@@ -67,23 +56,21 @@ docker run \
         soulteary/cronicle
 ```
 
-Access it in your browser: http://localhost:3012
+When the service is started, we can access the service in the browser: http://localhost:3012
 
 ## Docker Compose
 
-Init your app first (first time only).
-
-```bash
-docker-compose -f docker-compose.init up
-```
-
-Then, Start app with simple command:
+Using `compose` to start our service also requires **only one command**:
 
 ```bash
 docker-compose down && docker-compose up -d
 ```
 
-Access it in your browser: http://localhost:3012
+When the service is started, we can access the service in the browser: http://localhost:3012
+
+## With Traefik
+
+You can refer to the configuration in `docker-compose.traefik.yml` file.
 
 ## Snapshots
 

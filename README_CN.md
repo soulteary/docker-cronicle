@@ -12,7 +12,7 @@
 
 告别麻烦的配置和安装过程，使用容器**一键启动**你的计划任务中心。
 
-## 容器镜像
+## 更新、获取应用 Docker 容器镜像
 
 ```bash
 # 使用最新版本
@@ -39,20 +39,7 @@ DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/
 
 ## Docker 使用
 
-初始化应用（仅需执行一次）：
-
-```bash
-docker run --rm -it \
-        -v `pwd`/data/data:/opt/cronicle/data:rw \
-        -v `pwd`/data/logs:/opt/cronicle/logs:rw \
-        -v `pwd`/data/plugins:/opt/cronicle/plugins:rw \
-        --hostname cronicle \
-        --name cronicle \
-        soulteary/cronicle \
-        /opt/cronicle/bin/control.sh setup
-```
-
-接着，使用 Docker 启动一个将数据和日志文件持久化保存在本地的容器：
+使用非常简单，只需要一条命令：就能够通过 Docker 启动一个将数据和日志文件持久化保存在本地的容器。
 
 ```bash
 docker run \
@@ -67,23 +54,21 @@ docker run \
         soulteary/cronicle
 ```
 
-在浏览器中访问这个服务：http://localhost:3012
+当服务启动完毕，我们可以在浏览器中访问这个服务：http://localhost:3012
 
 ## Docker Compose 使用
 
-初始化应用（仅需执行一次）：
-
-```bash
-docker-compose -f docker-compose.init up
-```
-
-接着，启动我们的服务：
+使用 `compose` 启动我们的服务，同样也只需要一条命令：
 
 ```bash
 docker-compose down && docker-compose up -d
 ```
 
-在浏览器中访问这个服务：http://localhost:3012
+当服务启动完毕，我们可以在浏览器中访问这个服务：http://localhost:3012
+
+## 和 Traefik 一起使用
+
+可以参考 `docker-compose.traefik.yml` 这个文件中的配置。
 
 ## 界面预览
 
