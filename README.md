@@ -18,13 +18,14 @@ Say goodbye to troublesome configuration and installation, and start your Schedu
 # use the latest version
 docker pull soulteary/cronicle
 # or specified version
-docker pull soulteary/cronicle:0.9.16
+docker pull soulteary/cronicle:0.9.17
 ```
 
 ### Supported Versions
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
+- [v0.9.17](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.17)
 - [v0.9.16](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.16)
 - [v0.9.11](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.11)
 - [v0.9.9](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.11)
