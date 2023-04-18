@@ -18,13 +18,14 @@
 # 使用最新版本
 docker pull soulteary/cronicle
 # 或者使用指定版本
-docker pull soulteary/cronicle:0.9.17
+docker pull soulteary/cronicle:0.9.20
 ```
 
 ### 当前支持版本
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
+- [v0.9.20](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.20)
 - [v0.9.17](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.17)
 - [v0.9.16](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.16)
 - [v0.9.11](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.11)
