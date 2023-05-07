@@ -28,6 +28,7 @@ jobs:
           ghcr.io/soulteary/cronicle
         tags: |
           type=schedule
+          type=ref,event=latest
           type=ref,event=branch
           type=ref,event=pr
           type=semver,pattern={{version}}
