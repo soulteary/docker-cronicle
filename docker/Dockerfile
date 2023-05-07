@@ -1,5 +1,5 @@
 FROM node:18 AS Builder
-ENV CRONICLE_VERSION=0.9.20
+ENV CRONICLE_VERSION=0.9.21
 WORKDIR /opt/cronicle
 COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
 RUN tar zxvf /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz -C /tmp/ && \
