@@ -1,12 +1,12 @@
 # Docker Cronicle
 
-[![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
+[![Docker Build](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml/badge.svg)](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml) [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
 
 <p style="text-align: center;">
   <a href="README.md" target="_blank">ENGLISH</a> | <a href="README_CN.md">中文文档</a>
 </p>
 
-Simple and lightweight Cronicle Docker solution.
+Simple and lightweight Cronicle Docker solution, support x86, ARM64, ARMv7.
 
 ![Main Screenshot](https://pixlcore.com/software/cronicle/screenshots-new/job-details-complete.png)
 
