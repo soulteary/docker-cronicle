@@ -15,10 +15,12 @@ Say goodbye to troublesome configuration and installation, and start your Schedu
 ## Get Latest Docker Images
 
 ```bash
-# use the latest version
+# use the latest version on DockerHub
 docker pull soulteary/cronicle
 # or specified version
 docker pull soulteary/cronicle:0.9.21
+# Use GHCR mirror instead
+docker pull ghcr.io/soulteary/cronicle:latest
 ```
 
 ### Supported Versions

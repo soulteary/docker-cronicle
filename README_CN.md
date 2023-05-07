@@ -15,10 +15,12 @@
 ## 更新、获取应用 Docker 容器镜像
 
 ```bash
-# 使用最新版本
+# 使用 DockerHub 最新版本
 docker pull soulteary/cronicle
-# 或者使用指定版本
+# 或者，使用指定版本
 docker pull soulteary/cronicle:0.9.21
+# 使用 GHCR 镜像
+docker pull ghcr.io/soulteary/cronicle:latest
 ```
 
 ### 当前支持版本
