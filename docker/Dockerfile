@@ -1,11 +1,11 @@
-FROM node:18 AS Builder
+FROM node:18-bullseye AS Builder
 ENV CRONICLE_VERSION=0.9.21
 WORKDIR /opt/cronicle
 COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
 RUN tar zxvf /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz -C /tmp/ && \
     mv /tmp/Cronicle-${CRONICLE_VERSION}/* . && \
     rm -rf /tmp/* && \
-    npm install --verbose --registry=https://registry.npmmirror.com
+    npm install
 COPY ./patches /tmp/patches
 RUN patch -p3 < /tmp/patches/engine.patch lib/engine.js
 COPY docker-entrypoint.js ./bin/
