@@ -18,7 +18,7 @@ Say goodbye to troublesome configuration and installation, and start your Schedu
 # use the latest version on DockerHub
 docker pull soulteary/cronicle
 # or specified version
-docker pull soulteary/cronicle:0.9.21
+docker pull soulteary/cronicle:0.9.22
 # Use GHCR mirror instead
 docker pull ghcr.io/soulteary/cronicle:latest
 ```
@@ -27,6 +27,7 @@ docker pull ghcr.io/soulteary/cronicle:latest
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
+- [v0.9.22](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.22)
 - [v0.9.21](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.21)
 - [v0.9.20](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.20)
 - [v0.9.17](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.17)
