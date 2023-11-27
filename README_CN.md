@@ -18,7 +18,7 @@
 # 使用 DockerHub 最新版本
 docker pull soulteary/cronicle
 # 或者，使用指定版本
-docker pull soulteary/cronicle:0.9.23
+docker pull soulteary/cronicle:0.9.39
 # 使用 GHCR 镜像
 docker pull ghcr.io/soulteary/cronicle:latest
 ```
@@ -27,7 +27,8 @@ docker pull ghcr.io/soulteary/cronicle:latest
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
-- [v0.9.23](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.23)
+- [v0.9.39](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.39)
+- [v0.9.39](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.39)
 - [v0.9.22](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.22)
 - [v0.9.21](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.21)
 - [v0.9.20](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.20)
