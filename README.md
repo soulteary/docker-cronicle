@@ -1,6 +1,6 @@
 # Docker Cronicle
 
-[![Docker Build](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml/badge.svg)](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml) [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
+[![Docker Build](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml) [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
 
 <p style="text-align: center;">
   <a href="README.md" target="_blank">ENGLISH</a> | <a href="README_CN.md">中文文档</a>
@@ -18,7 +18,7 @@ Say goodbye to troublesome configuration and installation, and start your Schedu
 # use the latest version on DockerHub
 docker pull soulteary/cronicle
 # or specified version
-docker pull soulteary/cronicle:0.9.39
+docker pull soulteary/cronicle:0.9.45
 # Use GHCR mirror instead
 docker pull ghcr.io/soulteary/cronicle:latest
 ```

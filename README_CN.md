@@ -1,6 +1,6 @@
 # Docker Cronicle / 轻量计划任务
 
-[![Docker Build](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml/badge.svg)](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml) [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
+[![Docker Build](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/soulteary/docker-cronicle/actions/workflows/release.yml) [![Docker Image](https://img.shields.io/docker/pulls/soulteary/cronicle.svg)](https://hub.docker.com/r/soulteary/cronicle)
 
 <p style="text-align: center;">
   <a href="README.md" target="_blank">ENGLISH</a> | <a href="README_CN.md">中文文档</a>
