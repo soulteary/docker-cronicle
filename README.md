@@ -27,6 +27,7 @@ docker pull ghcr.io/soulteary/cronicle:latest
 
 DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/r/soulteary/cronicle)
 
+- [v0.9.45](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.45)
 - [v0.9.39](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.39)
 - [v0.9.22](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.22)
 - [v0.9.21](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.21)
