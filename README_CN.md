@@ -30,7 +30,6 @@ DockerHub: [https://hub.docker.com/r/soulteary/cronicle](https://hub.docker.com/
 - [v0.9.46](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.46)
 - [v0.9.45](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.45)
 - [v0.9.39](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.39)
-- [v0.9.22](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.22)
 - [历史版本](./HISTORY.md)
 
 ### 应用默认账号
