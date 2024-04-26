@@ -1,7 +1,8 @@
 FROM node:18-bullseye AS Builder
-ENV CRONICLE_VERSION=0.9.45
+ENV CRONICLE_VERSION=0.9.46
 WORKDIR /opt/cronicle
-COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
+RUN curl -L -o /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz https://github.com/jhuckaby/Cronicle/archive/refs/tags/v0.9.46.tar.gz
+# COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
 RUN tar zxvf /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz -C /tmp/ && \
     mv /tmp/Cronicle-${CRONICLE_VERSION}/* . && \
     rm -rf /tmp/* && \
