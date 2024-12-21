@@ -6,22 +6,21 @@ if(require("fs").existsSync("./data/users") || process.env["IS_WORKER"] === "tru
 } else {
   const { existsSync, unlinkSync } = require("fs");
   const { dirname } = require("path");
-  const { exec } = require("child_process");
+  const { spawnSync } = require("child_process");
   const { hostname, networkInterfaces } = require("os");
   const StandaloneStorage = require("pixl-server-storage/standalone");
 
   if (existsSync("./logs/cronicled.pid")) unlinkSync("./logs/cronicled.pid");
 
   if (!existsSync("./data/users")) {
-    exec("/opt/cronicle/bin/control.sh setup", (error, stdout, stderr) => {
-      console.log("Storage init.");
-      if (error || stderr) {
-        console.log("init strorage failed");
-        console.log(error.message || stderr);
-        process.exit(1);
-      }
-      console.log(`stdout: ${stdout}`);
-    });
+    console.log("Storage init.");
+    const result = spawnSync("/opt/cronicle/bin/control.sh", ["setup"]);
+    if (result.error || result.stderr.length !== 0) {
+      console.log("init strorage failed");
+      console.log(result.error?.message || result.stderr.toString());
+      process.exit(1);
+    }
+    console.log(`stdout: ${result.stdout}`);
   }
 
   process.chdir(dirname(__dirname));
