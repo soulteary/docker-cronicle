@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-if(require("fs").existsSync("./data/users")) {
+if(require("fs").existsSync("./data/users") || process.env["IS_WORKER"] === "true") {
   console.log("Docker Env already configured.");
   require("../lib/main.js");
 } else {
