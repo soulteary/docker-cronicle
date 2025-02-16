@@ -1,25 +1,36 @@
-FROM node:18-bullseye AS Builder
-ENV CRONICLE_VERSION=0.9.63
-WORKDIR /opt/cronicle
-RUN curl -L -o /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz https://github.com/jhuckaby/Cronicle/archive/refs/tags/v${CRONICLE_VERSION}.tar.gz
-# COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
-RUN tar zxvf /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz -C /tmp/ && \
-    mv /tmp/Cronicle-${CRONICLE_VERSION}/* . && \
-    rm -rf /tmp/* && \
-    yarn
-COPY ./patches /tmp/patches
-RUN patch -p3 < /tmp/patches/engine.patch lib/engine.js
-COPY docker-entrypoint.js ./bin/
+FROM soulteary/cronicle:0.9.63
 
+# Installa le dipendenze necessarie
+RUN apk add --no-cache \
+    icu-libs \
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl3 \
+    libstdc++ \
+    zlib \
+    wget \
+    bash \
+    ca-certificates \
+    gcompat
 
-FROM node:18-alpine
-RUN apk add procps curl
-COPY --from=builder /opt/cronicle/ /opt/cronicle/
-WORKDIR /opt/cronicle
-ENV CRONICLE_foreground=1
-ENV CRONICLE_echo=1
-ENV CRONICLE_color=1
-ENV debug_level=1
-ENV HOSTNAME=main
-RUN node bin/build.js dist && bin/control.sh setup
-CMD ["node", "bin/docker-entrypoint.js"]
+# Installa .NET usando lo script ufficiale
+RUN wget https://dot.net/v1/dotnet-install.sh && \
+    chmod +x dotnet-install.sh && \
+    ./dotnet-install.sh --channel 8.0 --runtime aspnetcore --install-dir /usr/share/dotnet && \
+    ln -sf /usr/share/dotnet/dotnet /usr/local/bin/dotnet && \
+    rm dotnet-install.sh
+
+# Imposta le variabili d'ambiente per .NET
+ENV \
+    DOTNET_ROOT=/usr/share/dotnet \
+    PATH="$PATH:/usr/share/dotnet" \
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false \
+    ASPNETCORE_URLS=http://+:5000
+
+# Rendi eseguibile dotnet e imposta i permessi
+RUN chmod +x /usr/share/dotnet/dotnet && \
+    chmod +x /usr/local/bin/dotnet
+
+# Verifica l'installazione di .NET
+RUN dotnet --info || true

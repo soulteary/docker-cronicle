@@ -1,9 +1,10 @@
 version: "3"
 
 services:
-
   cronicle:
-    image: soulteary/cronicle:0.9.63
+    build: 
+      context: ./docker
+      dockerfile: Dockerfile
     restart: always
     hostname: cronicle
     ports:
@@ -14,16 +15,17 @@ services:
       - ./data/data:/opt/cronicle/data
       - ./data/logs:/opt/cronicle/logs
       - ./data/plugins:/opt/cronicle/plugins
+      - ./tasks:/opt/cronicle/tasks
     extra_hosts:
       - "cronicle.lab.io:0.0.0.0"
     environment:
-      - TZ=Asia/Shanghai
+      - TZ=Europe/Rome
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:3012/api/app/ping || exit 1"]
       interval: 5s
       timeout: 1s
       retries: 3
     logging:
-        driver: "json-file"
-        options:
-            max-size: "10m"
+      driver: "json-file"
+      options:
+        max-size: "10m"
