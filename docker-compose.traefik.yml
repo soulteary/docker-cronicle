@@ -3,7 +3,7 @@ version: "3"
 services:
 
   cronicle:
-    image: soulteary/cronicle:0.9.73
+    image: soulteary/cronicle:0.9.76
     restart: always
     expose:
       - 3012
