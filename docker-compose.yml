@@ -3,7 +3,7 @@ version: "3"
 services:
 
   cronicle:
-    image: soulteary/cronicle:0.9.63
+    image: soulteary/cronicle:0.9.80
     restart: always
     hostname: cronicle
     ports:

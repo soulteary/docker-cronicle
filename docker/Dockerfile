@@ -1,5 +1,5 @@
 FROM node:18-bullseye AS Builder
-ENV CRONICLE_VERSION=0.9.63
+ENV CRONICLE_VERSION=0.9.80
 WORKDIR /opt/cronicle
 RUN curl -L -o /tmp/Cronicle-${CRONICLE_VERSION}.tar.gz https://github.com/jhuckaby/Cronicle/archive/refs/tags/v${CRONICLE_VERSION}.tar.gz
 # COPY Cronicle-${CRONICLE_VERSION}.tar.gz /tmp/
@@ -13,7 +13,7 @@ COPY docker-entrypoint.js ./bin/
 
 
 FROM node:18-alpine
-RUN apk add procps curl
+RUN apk add procps curl bash
 COPY --from=builder /opt/cronicle/ /opt/cronicle/
 WORKDIR /opt/cronicle
 ENV CRONICLE_foreground=1
