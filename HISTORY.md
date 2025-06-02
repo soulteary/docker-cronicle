@@ -1,5 +1,11 @@
 # History Versions
 
+- [v0.9.63](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.63)
+- [v0.9.59](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.59)
+- [v0.9.46](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.46)
+- [v0.9.45](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.45)
+- [v0.9.39](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.39)
+- [v0.9.23](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.23)
 - [v0.9.22](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.22)
 - [v0.9.21](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.21)
 - [v0.9.20](https://github.com/jhuckaby/Cronicle/releases/tag/v0.9.20)
