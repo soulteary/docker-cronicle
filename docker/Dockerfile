@@ -1,5 +1,5 @@
 # # BUILD STEP # #
-FROM node:18-bullseye AS builder
+FROM node:22 AS builder
 ENV CRONICLE_VERSION=0.9.134
 
 WORKDIR /opt/cronicle
