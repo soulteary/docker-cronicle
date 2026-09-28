@@ -1,0 +1,46 @@
+name: Copy Docker Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_tag:
+        description: Source image tag to copy (A)
+        required: true
+      target_tag:
+        description: Target image tag to create/copy to (B)
+        required: true
+
+env:
+  DOCKER_CLI_EXPERIMENTAL: "enabled"
+  IMAGE_TAG_PACKAGE_NAME: "cronicle-python"
+
+jobs:
+  copy-tag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set GitHub user
+        run: echo "GH_USER=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy tag A to tag B
+        env:
+          SOURCE_TAG: ${{ github.event.inputs.source_tag }}
+          TARGET_TAG: ${{ github.event.inputs.target_tag }}
+        run: |
+          SOURCE="ghcr.io/${GH_USER}/${IMAGE_TAG_PACKAGE_NAME}:${SOURCE_TAG}"
+          TARGET="ghcr.io/${GH_USER}/${IMAGE_TAG_PACKAGE_NAME}:${TARGET_TAG}"
+          echo "Copying $SOURCE -> $TARGET"
+          docker buildx imagetools create --tag "$TARGET" "$SOURCE"
