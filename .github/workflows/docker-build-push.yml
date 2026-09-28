@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Image tag
+        description: Image tag/s (comma-separated)
         required: true
 
 env:
@@ -19,7 +19,7 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
@@ -42,7 +42,7 @@ jobs:
         echo "IMAGE_TAG=ghcr.io/${{ env.GH_USER }}/${{ env.IMAGE_TAG_PACKAGE_NAME }}:${{ github.event.inputs.tag }}" >> $GITHUB_ENV
 
     - name: Build and push
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v7
       with:
         context: ./docker/
         platforms: linux/amd64, linux/arm/v7, linux/arm64/v8
