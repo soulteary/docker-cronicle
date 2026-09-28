@@ -14,7 +14,7 @@ COPY docker-entrypoint.js ./bin/
 
 
 # # FINAL IMAGE # #
-FROM python:3.13-alpine
+FROM python:3.14-alpine
 ARG USERNAME=cronicle
 
 RUN apk update --no-cache && apk add --no-cache procps curl bash nodejs
